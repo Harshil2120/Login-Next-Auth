@@ -4,10 +4,8 @@ export default function Chat() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-
   const handleSignOut = async () => {
-    await signOut({ redirect: false });
-    router.push("/"); // Redirect to home page after sign-out
+    await signOut();
   };
 
   if (status === "loading") {
@@ -48,9 +46,8 @@ export default function Chat() {
             Welcome to Next-Auth Login Demo
           </p>
         <div className="flex flex-col space-y-4 p-2 mt-5">
-        <button className="group h-12 px-6 border-2 border-gray-300 rounded-xl transition duration-300 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100" onClick={() =>
-                  signIn("google", { callbackUrl: "http://localhost:3000/chat" })
-                }>
+        <button className="group h-12 px-6 border-2 border-gray-300 rounded-xl transition duration-300 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100"
+                >
             <div className="relative flex items-center space-x-4 justify-center">
               <div className="text-lg">✉️</div>
               
