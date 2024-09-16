@@ -1,32 +1,22 @@
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useSession, signIn } from "next-auth/react";
 
 export default function Home() {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/chat"); // Redirect to chat page if user is authenticated
-    }
-  }, [status]);
+  const { session, status } = useSession();
 
   if (status === "loading") {
-    return <p>Loading...</p>;
+    return (
+      <div className="bg-gray-800 h-screen w-screen fixed top-0 flex flex-col justify-center items-center">
+        <img
+          src="/Dual Ring-1s-200px.svg"
+          className="h-16"
+          alt="Italian Trulli"
+        ></img>
+      </div>
+    );
   }
 
   if (!session) {
     signIn();
     return null;
   }
-
-  return (
-    <>
-      <h1>Home page</h1>
-    </>
-  );
 }
-
-
-

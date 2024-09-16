@@ -1,7 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
+# 🔒 Next-Auth-OAuth
+![localhost_3000_auth_signin_callbackUrl_http_3A_2F_2Flocalhost_3A3000_2Fchat](https://github.com/user-attachments/assets/04d97a4d-8899-4496-a679-d1db8ecc5fc8)
 First, run the development server:
 
 ```bash
